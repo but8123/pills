@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>약 추천 (데모)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>약 추천 (데모)</header>
+
+  <main class="wrap">
+    <!-- 왼쪽: 증상/알레르기 입력 -->
+    <section class="panel" aria-labelledby="filtersTitle">
+      <h2 id="filtersTitle" class="sr-only">증상/알레르기 선택</h2>
+
+      <div class="group">
+        <h3>증상</h3>
+        <label><input type="checkbox" name="sym" value="발열"> 발열</label><br>
+        <label><input type="checkbox" name="sym" value="두통"> 두통</label><br>
+        <label><input type="checkbox" name="sym" value="인후통"> 인후통</label><br>
+        <label><input type="checkbox" name="sym" value="코막힘"> 코막힘/콧물</label><br>
+        <label><input type="checkbox" name="sym" value="소화불량"> 소화불량</label>
+      </div>
+
+      <div class="group">
+        <h3>알레르기/주의</h3>
+        <label><input type="checkbox" name="alg" value="아세트아미노펜"> 아세트아미노펜</label><br>
+        <label><input type="checkbox" name="alg" value="NSAID"> NSAID(이부프로펜/아스피린)</label><br>
+        <label><input type="checkbox" name="alg" value="유당불내증"> 유당불내증</label><br>
+        <label><input type="checkbox" name="alg" value="간질환"> 간 질환</label>
+      </div>
+
+      <div class="group">
+        <label for="age">나이: </label>
+        <input id="age" type="number" min="0" value="18" style="width:90px" />
+      </div>
+
+      <button class="btn" id="run" type="button">추천 보기</button>
+      <p class="disclaimer">
+        * 정보제공용입니다. 진단·처방을 대체하지 않습니다. 증상이 심하거나 지속되면 의료기관을 이용하세요.
+      </p>
+    </section>
+
+    <!-- 오른쪽: 결과 카드 -->
+    <section class="panel" aria-labelledby="resultsTitle">
+      <h2 id="resultsTitle" class="sr-only">추천 결과</h2>
+      <div id="results" class="cards" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+/* 기본 스타일 */
+* { box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif; margin: 0; background: #f6f7f9; color:#111; }
+header { padding: 14px 20px; background: #111; color: #fff; font-weight: 700; }
+.wrap { display: grid; grid-template-columns: 320px 1fr; gap: 20px; padding: 20px; align-items: start; }
+
+.panel { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 16px; }
+.group { margin-bottom: 14px; }
+.group h3 { margin: 0 0 8px; font-size: 16px; }
+.btn { display: inline-block; padding: 10px 14px; border-radius: 10px; border: 1px solid #111; background: #111; color: #fff; cursor: pointer; }
+
+.cards { display: grid; gap: 12px; }
+.card { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 14px; display: grid; grid-template-columns: 1fr 160px; gap: 12px; align-items: center; }
+.badge { display: inline-block; font-size: 12px; padding: 2px 8px; border: 1px solid #e5e7eb; border-radius: 999px; margin-right: 6px; }
+.badge.warn { border-color:#f59e0b; color:#92400e; }
+.imgbox { border: 1px dashed #cbd5e1; border-radius: 10px; height: 120px; display: flex; align-items: center; justify-content: center; color:#475569; }
+
+.disclaimer { font-size: 12px; color: #6b7280; margin-top: 10px; }
+
+/* 접근성 보조용 숨김 클래스 */
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+@media (max-width: 900px) {
+  .wrap { grid-template-columns: 1fr; }
+  .card { grid-template-columns: 1fr; }
+}
