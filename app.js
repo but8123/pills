@@ -51,6 +51,19 @@ const MEDS = [
     how: "다른 약과 간격 두고 복용",
     notes: ["신장질환 주의"],
     imgAlt: "제산제"
+  },
+  {
+  id: "dextromethorphan",
+  name: "덱스트로메토르판 시럽",
+  class: "기침·진해제",
+  indications: ["기침", "인후통"],
+  allergy_tags: [],
+  avoid_tags: ["천식"],
+  age_min: 6,
+  dose: "성인 10mL, 6~12세 5mL씩 1일 3회",
+  how: "정확한 용량을 계량컵으로 측정하여 복용",
+  notes: ["과량 복용 시 어지러움 주의", "천식 환자 복용 주의"],
+  imgAlt: "기침약"
   }
 ];
 
