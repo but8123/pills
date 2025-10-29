@@ -61,8 +61,7 @@ function recommend(meds, symptoms, allergyTags, age){
     .filter(m => !m.avoid_tags?.some(t => allergyTags.includes(t)))
     .map(m => ({ ...m, score: (m.indications || []).reduce((s, tag) => s + (symptoms.includes(tag) ? 1 : 0), 0) }))
     .filter(m => m.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 3);
+    .sort((a, b) => b.score - a.score);
 }
 
 function render(cards){
