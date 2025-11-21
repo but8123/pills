@@ -3,32 +3,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>약 추천 프로그램</title>
+  <title>증상 기반 약 추천 웹사이트</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>약 추천 프로그램</header>
+  <header>증상 기반 약 추천 웹사이트 (데모)</header>
 
   <main class="wrap">
-    <!-- 왼쪽: 증상/알레르기 입력 -->
+    <!-- 왼쪽: 증상/알레르기 선택 -->
     <section class="panel" aria-labelledby="filtersTitle">
-      <h2 id="filtersTitle" class="sr-only">증상/알레르기 선택</h2>
+      <h2 id="filtersTitle" class="sr-only">증상 및 알레르기 선택</h2>
 
       <div class="group">
         <h3>증상</h3>
-        <label><input type="checkbox" name="sym" value="발열"> 발열</label><br>
-        <label><input type="checkbox" name="sym" value="두통"> 두통</label><br>
-        <label><input type="checkbox" name="sym" value="인후통"> 인후통</label><br>
-        <label><input type="checkbox" name="sym" value="코막힘"> 코막힘/콧물</label><br>
-        <label><input type="checkbox" name="sym" value="소화불량"> 소화불량</label>
+        <label><input type="checkbox" name="sym" value="발열"> 발열</label><br />
+        <label><input type="checkbox" name="sym" value="두통"> 두통</label><br />
+        <label><input type="checkbox" name="sym" value="인후통"> 인후통</label><br />
+        <label><input type="checkbox" name="sym" value="목통증"> 목통증</label><br />
+        <label><input type="checkbox" name="sym" value="기침"> 기침</label><br />
+        <label><input type="checkbox" name="sym" value="마른기침"> 마른기침</label><br />
+        <label><input type="checkbox" name="sym" value="가래"> 가래</label><br />
+        <label><input type="checkbox" name="sym" value="코막힘"> 코막힘</label><br />
+        <label><input type="checkbox" name="sym" value="콧물"> 콧물</label><br />
+        <label><input type="checkbox" name="sym" value="소화불량"> 소화불량</label><br />
+        <label><input type="checkbox" name="sym" value="복부팽만"> 복부 팽만감</label><br />
+        <label><input type="checkbox" name="sym" value="속쓰림"> 속쓰림</label><br />
+        <label><input type="checkbox" name="sym" value="설사"> 설사</label><br />
       </div>
 
       <div class="group">
-        <h3>알레르기/주의</h3>
-        <label><input type="checkbox" name="alg" value="아세트아미노펜"> 아세트아미노펜</label><br>
-        <label><input type="checkbox" name="alg" value="NSAID"> NSAID(이부프로펜/아스피린)</label><br>
-        <label><input type="checkbox" name="alg" value="유당불내증"> 유당불내증</label><br>
-        <label><input type="checkbox" name="alg" value="간질환"> 간 질환</label>
+        <h3>알레르기 / 주의사항</h3>
+        <label><input type="checkbox" name="alg" value="아세트아미노펜"> 아세트아미노펜 알레르기</label><br />
+        <label><input type="checkbox" name="alg" value="NSAID"> NSAID(이부프로펜·아스피린) 알레르기</label><br />
+        <label><input type="checkbox" name="alg" value="유당불내증"> 유당불내증</label><br />
+        <label><input type="checkbox" name="alg" value="간질환"> 간 질환</label><br />
+        <label><input type="checkbox" name="alg" value="위장질환"> 위장질환(위염·궤양 등)</label><br />
+        <label><input type="checkbox" name="alg" value="천식"> 천식</label><br />
+        <label><input type="checkbox" name="alg" value="고혈압"> 고혈압</label><br />
+        <label><input type="checkbox" name="alg" value="임신수유"> 임신/수유 중</label><br />
+        <label><input type="checkbox" name="alg" value="신장질환"> 신장 질환</label><br />
+        <label><input type="checkbox" name="alg" value="수면장애"> 수면장애·졸림 주의</label><br />
+        <label><input type="checkbox" name="alg" value="췌장질환"> 췌장 질환</label><br />
+        <label><input type="checkbox" name="alg" value="당뇨"> 당뇨병</label><br />
+        <label><input type="checkbox" name="alg" value="성분중복"> 이미 다른 감기약/진통제 복용 중</label><br />
+        <label><input type="checkbox" name="alg" value="변비"> 평소 변비가 심함</label><br />
       </div>
 
       <div class="group">
@@ -36,13 +54,15 @@
         <input id="age" type="number" min="0" value="18" style="width:90px" />
       </div>
 
-      <button class="btn" id="run" type="button">추천 보기</button>
+      <button class="btn" id="run" type="button">약 추천 보기</button>
+
       <p class="disclaimer">
-        * 정보제공용입니다. 진단·처방을 대체하지 않습니다. 증상이 심하거나 지속되면 의료기관을 이용하세요.
+        * 이 웹사이트는 <b>정보 제공용</b>입니다. 실제 복용은 설명서를 확인하고,
+        증상이 심하거나 지속될 경우 반드시 의료 전문가와 상담해야 합니다.
       </p>
     </section>
 
-    <!-- 오른쪽: 결과 카드 -->
+    <!-- 오른쪽: 결과 -->
     <section class="panel" aria-labelledby="resultsTitle">
       <h2 id="resultsTitle" class="sr-only">추천 결과</h2>
       <div id="results" class="cards" aria-live="polite"></div>
